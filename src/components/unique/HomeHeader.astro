@@ -18,7 +18,7 @@ const {enableActionBtn = true} = Astro.props;
                 <hr class="bg-white hidden w-[1px] h-full lg:block">
 				<nav class="hidden gap-8 lg:flex">
 					<PopLink href="/#contenido">Home</PopLink>
-					<PopLink href="/#modulos">About US</PopLink>
+					<PopLink href="/#modulos">About</PopLink>
 					<PopLink href="/#preguntas">Services</PopLink>
 				</nav>
 			</div>
@@ -26,7 +26,7 @@ const {enableActionBtn = true} = Astro.props;
 				<ConditionalRender controller={enableActionBtn}>
 					<a class="isolate relative group" href="/#modulos">
 						<div class="bg-pinia-300 text-black p-2 rounded-md group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
-							Contact
+							Contact Us
 						</div>
 						<div class="bg-green-400 absolute inset-0 -z-10 rounded-md"></div>
 					</a>

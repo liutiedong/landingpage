@@ -1,0 +1,58 @@
+---
+import ArtAuthor from "@reusable/atoms/ArtAuthor.astro";
+import CodeShowcase from "./CodeShowcase.md";
+---
+
+<style>
+	li::before {
+		content: "";
+		display: inline-block;
+		width: 1.5rem;
+		aspect-ratio: 1/1;
+		background-image: url("resource/svg/check.svg");
+		background-size: cover;
+	}
+</style>
+<section id="contenido" class="mb-section">
+		<div
+			class="max-w-[700px] mx-auto grid gap-8 xl:max-w-none xl:grid-cols-2"
+		>
+		<div class="relative">
+			<figure class="relative isolate hidden w-full aspect-square max-w-[500px] mx-auto sm:block">
+				<div class="bg-pinia-400 absolute inset-0 rounded-full -z-10 opacity-50 scale-y-[.5] -rotate-45 blur-[200px]"></div>
+				<img
+					src="resource/img/jsking.webp"
+					alt="icono de un cubo de javascript en 3D"
+				/>
+				<figcaption
+					class="text-neutral-500 text-end text-xs font-extralight -translate-y-4"
+				>
+					<ArtAuthor href="https://www.instagram.com/villegas.arts">@Villegas.Arts</ArtAuthor>
+				</figcaption>
+			</figure>
+			<!-- <div
+				class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:block xl:static xl:translate-x-0 xl:translate-y-0 [&>*]:p-4 [&>*]:w-max [&>*]:rounded-lg"
+			>
+				<CodeShowcase />
+			</div> -->
+		</div>
+		<div>
+			<h2 class="text-subtitle">
+				Maximize Productivity on <strong class="text-purple-300 font-medium">Computers</strong> with AI-Powered Automation
+			</h2>
+			<p class="mb-8 text-lg">
+				Transform how you work on your computer with our AI-driven automation services. Whether you're handling documents, organizing data, or managing your schedule, our AI simplifies complex tasks, freeing up your time to focus on higher priorities.
+			</p>
+			<p class="mb-8 text-lg">With our computer automation service, you can:</p>
+			<ul
+				class="mb-6 flex flex-col gap-6 [&>*]:flex [&>*]:items-center [&>*]:gap-2"
+			>
+				<li>Create and edit documents effortlessly</li>
+				<li>Automate data processing and analysis in spreadsheets</li>
+				<li>Manage and schedule calendar events with ease</li>
+				<li>Streamline email drafting and communications</li>
+				<li>Integrate with popular tools like Microsoft Office and Google Workspace</li>
+			</ul>
+			<span>and many other tasks...</span>
+		</div>
+</section>

@@ -2,29 +2,30 @@
 import Question from "@reusable/molecules/Question";
 ---
 
-<section id="preguntas" class="mb-section">
-	<h2 class="decoration-pinia-300 text-subtitle underline underline-offset-8 decoration-2 decoration-wavy">FAQ</h2>
-	<div class="grid gap-4 md:grid-cols-2 ">
+<section id="faq" class="mb-section">
+	<!-- <h2 class="decoration-purple-400 text-subtitle underline underline-offset-8 decoration-2 decoration-wavy">FAQ</h2> -->
+	<h2 class="decoration-purple-400 text-subtitle decoration-2 decoration-wavy">FAQ</h2>
+	<div class="grid gap-4 md:grid-cols-2">
 		<div class="flex flex-col gap-4">
-			<Question client:visible question="How to contact us?">
-				Es una guía diseñada para aprender JavaScript
+			<Question client:visible question="What can our AI automate for you?">
+				Our AI can handle a wide range of tasks, including writing documents, performing tasks in Excel, drafting emails, scheduling calendar events, booking flights, and even setting alarms on your phone.
 			</Question>
-			<Question client:visible question="¿Que voy a aprender en ilovejs ?">
-				Aprenderas todos los conceptos clave y conocimientos necesarios que te ayudarán en tu camino como Desarrollador Web
+			<Question client:visible question="How do I use your AI service?">
+				Simply provide a command through our platform—whether by text, voice, or selecting predefined options—and our AI will execute the task for you seamlessly.
 			</Question>
-			<Question client:visible question="¿Como esta organizado el contenido en ilovejs ?">
-				El contenido de ilovejs se estructura en módulos, donde cada uno agrupa sus propios artículos. Se sugiere un enfoque de aprendizaje secuencial, es decir, seguir los módulos y los artículos en el orden recomendado
+			<Question client:visible question="Is my data secure?">
+				Yes, we prioritize your privacy and security. All data processed by our AI is encrypted and never shared with third parties.
 			</Question>
 		</div>
 		<div class="flex flex-col gap-4">
-			<Question client:visible question="¿Quien crea el contenido en ilovejs ?">
-				El contenido es administrado y enriquecido gracias a la participación de nuestra comunidad de colaboradores en GitHub
+			<Question client:visible question="Which platforms does your AI support?">
+				Our AI integrates with a wide variety of platforms, including Microsoft Office, Google Workspace, Slack, and many others. We continuously expand our compatibility to support more tools.
 			</Question>
-			<Question client:visible question="¿Es ilovejs gratuito ?">
-				ilovejs es un proyecto open source hecho por la comunidad para la comunidad.
+			<Question client:visible question="What is the cost of your service?">
+				We offer flexible pricing plans tailored to individual users, professionals, and businesses. You can choose the plan that best suits your needs.
 			</Question>
-			<Question client:visible question="¿Como puedo colaborar?">
-				¿Eres un desarrollador interesado en colaborar? Te invitamos a visitar nuestro repositorio en GitHub y consultar nuestra guía para colaboradores
+			<Question client:visible question="How can I get started?">
+				Getting started is easy! Just sign up for a free trial or request a demo on our website, and you'll be up and running in minutes.
 			</Question>
 		</div>
 	</div>
