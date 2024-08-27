@@ -40,3 +40,5 @@ For icons:
 https://www.flaticon.com/icons
 
 https://www.freepik.com/icons
+
+https://thenounproject.com/icon
