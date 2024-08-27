@@ -23,7 +23,6 @@ const ModuleTree: FC<ModuleTreeProps> = ({ data }) => {
 		<>
 			<header className="mb-16 flex gap-6 justify-between items-center flex-wrap">
 				<h2 className="text-subtitle" style={{"marginBottom" : "0px"}}>
-					Módulo :{" "}
 					<span
 						className="text-pinia-300"
 						id="module_title"
@@ -37,7 +36,7 @@ const ModuleTree: FC<ModuleTreeProps> = ({ data }) => {
 					optionList={modulesAvalibles}
 				/>
 			</header>
-			<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{/* <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{data.filter(e => e.moduleName === moduleSelect).map((e) => (
 					<ArticleCard
 						key={e.articleName}
@@ -47,7 +46,7 @@ const ModuleTree: FC<ModuleTreeProps> = ({ data }) => {
 						href={e.href}
 					/>
 				))}
-			</div>
+			</div> */}
 		</>
 	);
 };

@@ -1,19 +1,19 @@
 ---
 const months = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-  ];
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
 
-  const currentDate = new Date();
-  const dia = currentDate.getDate();
-  const mes = currentDate.getMonth();
-  const año = currentDate.getFullYear();
+const currentDate = new Date();
+const day = currentDate.getDate();
+const month = currentDate.getMonth();
+const year = currentDate.getFullYear();
 
-const result = `${dia} de ${months[mes]} del ${año}`;
+const result = `${day} ${months[month]} ${year}`;
 ---
 <span class="flex justify-end items-center gap-1 text-xs">
     <img class="w-4 aspect-square" src="resource/svg/world.svg" alt="world icon">
     <span>
-        Actualizado por ultima vez el <span class="text-lime-300">{result}</span>
+        Last updated on <span class="text-lime-300">{result}</span>
     </span>
 </span>
