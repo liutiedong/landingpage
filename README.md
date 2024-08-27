@@ -32,3 +32,11 @@ npm run dev
 
 - Lea la [guía de contribución](/contributing/general.md) para  modificar y/o corregir contenido de la página
 - Lea la [guía de redacción](/contributing/articles.md) para crear , modificar y/o corregir artículos
+
+
+
+
+For icons:
+https://www.flaticon.com/icons
+
+https://www.freepik.com/icons
