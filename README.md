@@ -42,3 +42,13 @@ https://www.flaticon.com/icons
 https://www.freepik.com/icons
 
 https://thenounproject.com/icon
+
+Speedtest:
+https://pagespeed.web.dev/
+
+Todo:
+Terms of Use
+Privacy Policy
+linkedin, x, etc.
+language
+headers stay on top of view

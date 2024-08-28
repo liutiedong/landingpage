@@ -1,0 +1,233 @@
+---
+// Reviews.astro
+const reviews = [
+  {
+    name: "Michael Johnson",
+    company: "Tech Innovators Inc.",
+    review: "Amazing product! Our team's productivity has increased significantly.",
+    date: "July 15, 2024",
+  },
+  {
+    name: "Sarah Williams",
+    company: "Creative Solutions LLC",
+    review: "Exceptional customer service and a product that truly delivers on its promises.",
+    date: "August 2, 2024",
+  },
+  {
+    name: "David Brown",
+    company: "Global Ventures",
+    review: "Highly recommend! We've seen remarkable improvements in our workflow.",
+    date: "June 25, 2024",
+  },
+  {
+    name: "Emily Davis",
+    company: "NextGen Enterprises",
+    review: "User-friendly and efficient. Our team loves using it.",
+    date: "August 9, 2024",
+  },
+  {
+    name: "James Miller",
+    company: "Bright Future Corp.",
+    review: "A game-changer for our business operations. Wouldn't hesitate to recommend.",
+    date: "July 28, 2024",
+  },
+  {
+    name: "Jessica Garcia",
+    company: "Innovative Minds",
+    review: "Fantastic tool! It has streamlined so many of our processes.",
+    date: "June 19, 2024",
+  },
+  {
+    name: "Christopher Martinez",
+    company: "Alpha Solutions",
+    review: "Great experience from start to finish. The support team is outstanding.",
+    date: "July 7, 2024",
+  },
+  {
+    name: "Amanda Hernandez",
+    company: "Tech Pioneers",
+    review: "Incredible software with top-notch customer support.",
+    date: "August 12, 2024",
+  },
+  {
+    name: "Daniel Thompson",
+    company: "Visionary Tech Group",
+    review: "Reliable, efficient, and easy to use. Perfect for our needs.",
+    date: "July 30, 2024",
+  },
+  {
+    name: "Olivia White",
+    company: "Bright Ideas Co.",
+    review: "The best solution we've found. Our team couldn't be happier.",
+    date: "June 30, 2024",
+  },
+  {
+    name: "Joshua Lee",
+    company: "Global Innovations Ltd.",
+    review: "A must-have for any business looking to enhance productivity.",
+    date: "July 5, 2024",
+  },
+  {
+    name: "Sophia Harris",
+    company: "Future Forward",
+    review: "We love how intuitive and powerful this tool is.",
+    date: "August 6, 2024",
+  },
+  {
+    name: "Matthew Clark",
+    company: "Modern Enterprises",
+    review: "Exceeded our expectations in every way.",
+    date: "July 17, 2024",
+  },
+  {
+    name: "Isabella Lewis",
+    company: "Pinnacle Solutions",
+    review: "Brilliant tool, excellent customer service.",
+    date: "June 22, 2024",
+  },
+  {
+    name: "Alexander Walker",
+    company: "Elite Tech Group",
+    review: "This product has transformed our day-to-day operations.",
+    date: "August 14, 2024",
+  },
+  {
+    name: "Mia Robinson",
+    company: "Smart Innovations",
+    review: "Easy to use, powerful features, and great support.",
+    date: "July 11, 2024",
+  },
+];
+---
+
+<section id="review" class="mb-16">
+    <h2 class="text-subtitle items-center mb-4">
+        Client Testimonials
+    </h2>
+  <div class="reviews-container flex gap-6">
+    {reviews.map((review) => (
+        <div class="review-card bg-white p-6 rounded-lg shadow-md min-w-[300px]">
+          <p class="block">"{review.review}"</p>
+          <div>
+          <span class="block font-bold">{review.name}</span>
+          <span class="block">{review.company}</span>
+          <span class="block text-sm text-gray-500">{review.date}</span>
+          </div>
+        </div>
+      ))}
+    {reviews.map((review) => (
+      <div class="review-card bg-white p-6 rounded-lg shadow-md min-w-[300px]">
+        <p class="block">"{review.review}"</p>
+        <div>
+        <span class="block font-bold">{review.name}</span>
+        <span class="block">{review.company}</span>
+        <span class="block text-sm text-gray-500">{review.date}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+<!-- 
+  <style>
+  .reviews-section {
+        position: relative;
+        width: 100vw; /* Full viewport width */
+        overflow: hidden;
+        padding: 0; /* Remove any padding that might cause margins */
+        margin: 0; /* Remove any margin */
+    }
+  
+    .reviews-container {
+      display: flex;
+      gap: 16px;
+      animation: scroll-left 20s linear infinite;
+    }
+  
+    .review-card {
+      min-width: 300px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style> -->
+
+  <style>
+    /* Reviews section should take the full width of the viewport */
+    .reviews-section {
+      position: relative;
+      width: 100vw;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    /* Reviews container styling */
+    .reviews-container {
+      display: flex;
+      gap: 20px;
+      animation: scroll-left 20s linear infinite;
+      margin: 0;
+      padding: 0;
+    }
+
+  /* Ensure the bottom content (name, company, date) sticks to the bottom */
+.review-card div {
+  margin-top: auto; /* Push the div containing name, company, and date to the bottom */
+}
+
+/* Updated Review card styling */
+.review-card {
+  min-width: calc(25% - 20px); /* Show 4 cards at a time */
+  max-width: calc(25% - 20px); /* Ensure 4 cards are shown */
+  height: 240px; /* Slightly increase the height of the card */
+  background-color: rgba(40, 40, 34, 0.8); /* Dark, transparent background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white; /* Ensure text is visible on dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align review at top and other info at the bottom */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .review-card {
+    min-width: 100%; /* Show 1 card at a time */
+    max-width: 100%;
+    height: 300px; /* Increase height for mobile for better readability */
+  }
+}
+  
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .review-card {
+        min-width: 100%; /* Show 1 card at a time */
+        max-width: 100%;
+      }
+    }
+  
+    /* Keyframe animation for scrolling */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
