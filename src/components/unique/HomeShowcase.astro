@@ -1,0 +1,194 @@
+---
+const questionsRow1 = [
+  "Set up an alarm for 7am tomorrow and remind me of the meeting.",
+  "Write a Word document summarizing the latest project updates.",
+  "Open Steam and play my favorite game for 30 minutes.",
+  "Sort this Excel sheet by date and filter out incomplete entries.",
+  "Photoshop this image to remove the background.",
+  "Reply to my emails from today with a thank you note.",
+  "Send a text to John saying I'll be 10 minutes late.",
+  "Create a PowerPoint presentation on sales performance.",
+  "Set up a video call with my team for next Monday at 3pm.",
+  "Convert this PDF into an editable Word document.",
+  "Solve this CAPTCHA so I can continue browsing.",
+  "Schedule a weekly report email to be sent every Monday at 8am.",
+  "Open Photoshop and resize all images in this folder to 1080x1080 pixels.",
+  "Analyze this spreadsheet and highlight any duplicates in red.",
+  "Extract text from this PDF and save it as a Word document.",
+  "Translate this email from French to English and reply with a confirmation.",
+  "Organize my download folder by file type and delete duplicates.",
+  "Open Microsoft Teams and set my status to 'Do Not Disturb'.",
+  "Export my contact list from my phone to a CSV file.",
+  "Generate a PowerPoint presentation from these Word document bullet points.",
+];
+
+const questionsRow2 = [
+  "Write a detailed report on last month’s sales data.",
+  "Organize my desktop files and create a folder structure.",
+  "Launch Photoshop and enhance the lighting in this photo.",
+  "Draft an email to the team about the new project timeline.",
+  "Fill out this spreadsheet with today's inventory data.",
+  "Schedule a Zoom meeting and send invites to all participants.",
+  "Open Spotify and play my morning playlist.",
+  "Calculate the sum of the sales column in Excel.",
+  "Download the latest updates for my software.",
+  "Prepare a budget proposal in Excel for the next quarter.",
+  "Create an automated backup of my documents folder every evening at 6pm.",
+  "Log into my bank account and check the balance for this month.",
+  "Fill out this online form using my saved details.",
+  "Draft a project plan in Excel with tasks, deadlines, and dependencies.",
+  "Play my 'Focus' playlist on Spotify and set the volume to 50%.",
+  "Scan this QR code and open the link in a new browser tab.",
+  "Compile data from multiple Excel sheets into a single summary sheet.",
+  "Turn on my computer’s night mode at 8pm daily.",
+  "Open Slack and send a message to my team channel about today’s meeting.",
+  "Retrieve my latest bank statements and organize them by date.",
+];
+
+const questionsRow3 = [
+  "Open Outlook and categorize my unread emails.",
+  "Set a daily reminder to check my calendar at 9am.",
+  "Edit this Word document and correct any spelling mistakes.",
+  "Sync my Google calendar with my phone’s calendar.",
+  "Back up my phone photos to Google Drive.",
+  "Automate this data entry task in Excel using a macro.",
+  "Update my computer and run a security scan.",
+  "Write a professional email to apologize for missing a meeting.",
+  "Open Chrome and find articles on the latest tech trends.",
+  "Create a to-do list and set deadlines for each task.",
+  "Set up a VPN connection and connect to the New York server.",
+  "Edit this photo to remove any background objects and enhance brightness.",
+  "Find and book a table at a nearby restaurant for dinner tonight.",
+  "Monitor my PC’s performance and alert me when CPU usage is high.",
+  "Set my phone to silent mode during scheduled meetings.",
+  "Log in to my cloud storage and upload these files from my desktop.",
+  "Log in to my work web portal.",
+  "Open Excel and create a graph from the sales data.",
+  "Prepare an expense report using my credit card transactions.",
+  "Open Zoom, schedule a call for 4pm, and invite the project team."
+];
+
+---
+
+<section id="example-questions" class="reviews-section">
+  <!-- <h2 class="text-subtitle text-center mb-5">
+    Example Tasks You Can Ask
+  </h2> -->
+
+  <!-- First row: Moves to the right -->
+  <div class="reviews-container flex gap-6 scroll-right-show">
+    {questionsRow1.map((question) => (
+      <div class="review-card bg-white p-6 rounded-lg shadow-md min-w-[300px] mb-5"
+            onmouseover="this.parentElement.style.animationPlayState='paused'" 
+            onmouseout="this.parentElement.style.animationPlayState='running'">
+        <p class="block">{question}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Second row: Moves to the left -->
+  <div class="reviews-container flex gap-6 scroll-left-show mt-5">
+    {questionsRow2.map((question) => (
+      <div class="review-card bg-white p-6 rounded-lg shadow-md min-w-[300px] mb-5"
+      onmouseover="this.parentElement.style.animationPlayState='paused'" 
+      onmouseout="this.parentElement.style.animationPlayState='running'">
+        <p class="block">{question}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Third row: Moves to the right -->
+  <div class="reviews-container flex gap-6 scroll-right-show mt-5">
+    {questionsRow3.map((question) => (
+      <div class="review-card bg-white p-6 rounded-lg shadow-md min-w-[300px] mb-5"
+      onmouseover="this.parentElement.style.animationPlayState='paused'" 
+      onmouseout="this.parentElement.style.animationPlayState='running'">
+        <p class="block">{question}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Reviews section should take the full width of the viewport */
+  .reviews-section {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+
+  /* Reviews container styling */
+  .reviews-container {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Review card styling */
+  .review-card {
+    min-width: calc(20% - 20px); /* Show 4 cards at a time */
+    max-width: calc(20% - 20px); /* Ensure 4 cards are shown */
+    height: 110px; /* Slightly increase the height of the card */
+    background-color: rgba(40, 40, 34, 0.8); /* Dark, transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white; /* Ensure text is visible on dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align review at top and other info at the bottom */
+  }
+
+  /* Ensure the bottom content (name, company, date) sticks to the bottom */
+  .review-card div {
+    margin-top: auto; /* Push the div containing name, company, and date to the bottom */
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .review-card {
+      min-width: 100%; /* Show 1 card at a time */
+      max-width: 100%;
+      height: 300px; /* Increase height for mobile for better readability */
+    }
+  }
+
+  /* Animation for scrolling right */
+  .scroll-right-show {
+    animation: scroll-right-show 50s linear infinite;
+    animation-play-state: running; /* Default state is running */
+  }
+
+  /* Animation for scrolling left */
+  .scroll-left-show {
+    animation: scroll-left-show 50s linear infinite;
+    animation-play-state: running; /* Default state is running */
+  }
+
+  /* Keyframes for seamless scrolling right */
+  @keyframes scroll-right-show {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Keyframes for seamless scrolling left */
+  @keyframes scroll-left-show {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
