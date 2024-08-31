@@ -52,3 +52,13 @@ Privacy Policy
 linkedin, x, etc.
 language
 headers stay on top of view
+
+
+Convert gif to webp:
+1. Using Online Tools
+
+Online converters are easy to use and require no installation. Here are some popular options:
+
+	•	EZGIF: ezgif.com
+	•	Convertio: convertio.co
+	•	CloudConvert: cloudconvert.com
