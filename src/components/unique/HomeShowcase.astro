@@ -156,7 +156,17 @@ const questionsRow3 = [
     .review-card {
       min-width: 100%; /* Show 1 card at a time */
       max-width: 100%;
-      height: 300px; /* Increase height for mobile for better readability */
+      height: 110px; /* Increase height for mobile for better readability */
+    }
+      /* Animation for scrolling right */
+    .scroll-right-show {
+        animation: scroll-right-show 20s linear infinite;
+        animation-play-state: running; /* Default state is running */
+    }
+    /* Animation for scrolling left */
+    .scroll-left-show {
+        animation: scroll-left-show 20s linear infinite;
+        animation-play-state: running; /* Default state is running */
     }
   }
 
