@@ -135,7 +135,8 @@ const questionsRow3 = [
   .review-card {
     min-width: calc(20% - 20px); /* Show 4 cards at a time */
     max-width: calc(20% - 20px); /* Ensure 4 cards are shown */
-    height: 110px; /* Slightly increase the height of the card */
+    min-height: 110px; /* Minimum height for consistency */
+    height: auto; /* Allow height to adjust based on content */
     background-color: rgba(40, 40, 34, 0.8); /* Dark, transparent background */
     padding: 30px;
     border-radius: 12px;
@@ -149,6 +150,18 @@ const questionsRow3 = [
   /* Ensure the bottom content (name, company, date) sticks to the bottom */
   .review-card div {
     margin-top: auto; /* Push the div containing name, company, and date to the bottom */
+  }
+
+    /* Animation for scrolling right */
+  .scroll-right-show {
+    animation: scroll-right-show 50s linear infinite;
+    animation-play-state: running; /* Default state is running */
+  }
+
+  /* Animation for scrolling left */
+  .scroll-left-show {
+    animation: scroll-left-show 50s linear infinite;
+    animation-play-state: running; /* Default state is running */
   }
 
   /* Mobile responsiveness */
@@ -170,17 +183,7 @@ const questionsRow3 = [
     }
   }
 
-  /* Animation for scrolling right */
-  .scroll-right-show {
-    animation: scroll-right-show 50s linear infinite;
-    animation-play-state: running; /* Default state is running */
-  }
 
-  /* Animation for scrolling left */
-  .scroll-left-show {
-    animation: scroll-left-show 50s linear infinite;
-    animation-play-state: running; /* Default state is running */
-  }
 
   /* Keyframes for seamless scrolling right */
   @keyframes scroll-right-show {
