@@ -24,7 +24,7 @@ const Selector: FC<SelectorProps> = ({
 				<span>{capitalize(defaultSelect)}</span>
 				<img
 					className="w-8"
-					src="resource/svg/down_arrow.svg"
+					src="/resource/svg/down_arrow.svg"
 					alt="down arrow"
 				/>
 			</button>
