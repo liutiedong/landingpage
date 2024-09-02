@@ -12,7 +12,7 @@ const Question : FC<QuestionProps> = ({question , children}) => {
     return <button className="bg-zinc-800 border-pinia-300 px-3 py-5 border-l-4" onClick={toggle}>
         <header className="flex items-start justify-between text-start">
             <h3> {question} </h3>
-            <img className={`w-5 transition-transform ${open ? "rotate-45" : "rotate-0"}`} src="resource/svg/plus.svg" alt="simbolo de suma"/>
+            <img className={`w-5 transition-transform ${open ? "rotate-45" : "rotate-0"}`} src="/resource/svg/plus.svg" alt="simbolo de suma"/>
         </header>
         <div className={`grid transition-[grid-template-rows] ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
             <div className="overflow-hidden">
