@@ -1,0 +1,64 @@
+---
+import ArtAuthor from "../../reusable/atoms/ArtAuthor.astro";
+---
+<section id="contact" class="max-w-[1000px] mx-auto isolate">
+	<!-- <figure class="relative">
+        <figcaption
+            class="text-neutral-500 absolute bottom-0 right-0 text-xs font-extralight -translate-y-4"
+        >
+            <ArtAuthor href="https://instagram.com/villegas.arts">@Villegas.Arts</ArtAuthor>
+        </figcaption>
+        <div class="bg-slate-500 absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] scale-y-50 aspect-square rounded-full translate-y-1/2 -z-10 opacity-50 blur-[200px]"></div>
+		<img
+			class="w-full max-w-[250px] mx-auto"
+			src="resource/img/character.webp"
+			alt="3D character holding a laptop"
+		/>
+	</figure> -->
+	<div
+		class="bg-gradient-to-r from-purple-300 to-blue-300 w-full p-1 pb-0 rounded-tl-2xl rounded-tr-2xl overflow-hidden"
+	>
+		<div
+			class="bg-gray-800 rounded-tl-xl rounded-tr-xl p-6 grid gap-6 md:grid-cols-[1fr_min-content_1fr]"
+		>
+			<div>
+				<h2 class="text-purple-300 text-subtitle">联系我们</h2>
+				<p>
+					您可以在任何时候联系我们，我们会尽快回复您。您可以通过
+
+					<a href="mailto:info@altairx.tech" class="text-blue-400 hover:text-blue-500 font-semibold flex items-center">
+						<!-- <img src="path/to/email-icon.svg" alt="Email Icon" class="w-4 h-4 mr-4" /> -->
+						info@altairx.tech
+					</a>
+					或者拨打电话
+					<a href="tel:+1234567890" class="text-blue-400 hover:text-blue-500 font-semibold flex items-center">
+						<!-- <img src="path/to/phone-icon.svg" alt="Phone Icon" class="w-4 h-4 mr-4" /> -->
+						+65 84012427
+					</a>
+				</p>
+				
+			</div>
+			<div class="border-purple-300 border-r-2 border-dashed"></div>
+			<div>
+                <form>
+                    <label class="block mb-6">
+                        <span class="block mb-2">邮箱</span>
+                        <input class="bg-transparent border-gray-700 w-full p-2 border-2 rounded-md text-sm" type="email" placeholder="您的邮箱..." required/>
+                    </label>
+                    <label class="block mb-6">
+                        <span class="block mb-2">内容</span>
+                        <textarea class="bg-transparent border-gray-700 w-full min-h-[100px] max-h-[200px] p-2 border-2 rounded-md text-sm" placeholder="内容..." required></textarea>
+                    </label>
+					<div class="flex justify-end">
+						<button class="isolate relative group">
+							<div class="bg-purple-300 text-black p-2 rounded-md group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
+								发送电子邮件
+							</div>
+							<div class="bg-green-400 absolute inset-0 -z-10 rounded-md"></div>
+						</button>
+					</div>
+                </form>
+            </div>
+		</div>
+	</div>
+</section>

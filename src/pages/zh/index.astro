@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import HomeHero from "@/components/unique/chinese/HomeHero.astro";
+import HomeHeader from "@/components/unique/chinese/HomeHeader.astro";
+import HomeAbout from "@/components/unique/chinese/HomeAbout.astro";
+import HomeAbout2 from "@/components/unique/chinese/HomeAbout2.astro";
+import HomeModules from "@/components/unique/chinese/HomeModules.astro";
+import HomeFAQ from "@/components/unique/chinese/HomeFAQ.astro";
+import Wrapper from "@/components/reusable/atoms/Wrapper.astro";
+import HomeSuggestions from "@/components/unique/chinese/HomeSuggestions.astro";
+import HomeFooter from "@/components/unique/chinese/HomeFooter.astro";
+import HomeReviews from "@/components/unique/chinese/HomeReviews.astro";
+import HomeShowcase from "@/components/unique/chinese/HomeShowcase.astro";
+---
+
+<BaseLayout
+	title="AltairX | Octopus AI"
+	description="Welcome to AltairX, where we empower your productivity with AI-powered automation services for mobile phones and computers."
+>
+	<HomeHeader />
+	<Wrapper>
+		<HomeHero />
+		<HomeShowcase />
+		<HomeAbout />
+		<HomeAbout2 />
+		<HomeModules />
+		<HomeReviews />
+		<HomeFAQ />
+		<HomeSuggestions/>
+	</Wrapper>
+	<HomeFooter/>
+</BaseLayout>

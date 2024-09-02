@@ -1,0 +1,75 @@
+---
+import Logo from "@reusable/atoms/Logo.astro";
+import PopLink from "@reusable/atoms/PopLink.astro";
+import Wrapper from "@reusable/atoms/Wrapper.astro";
+import ConditionalRender from "../../reusable/atoms/ConditionalRender.astro";
+
+interface Props{
+	enableActionBtn?: boolean
+}
+const { enableActionBtn = true } = Astro.props;
+---
+
+<header class="bg-zinc-800 py-4 fixed top-0 left-0 w-full z-50 bg-opacity-80">
+	<Wrapper>
+		<div class="flex">
+			<div class="grow flex items-center gap-8 text-lg">
+				<Logo/>
+                <hr class="bg-white hidden w-[1px] h-full lg:block">
+				<nav class="hidden gap-8 lg:flex">
+					<PopLink href="/zh">首页</PopLink>
+					<PopLink href="#about">关于我们</PopLink>
+					<PopLink href="#service">服务</PopLink>
+					<PopLink href="#teams">新闻</PopLink>
+					<PopLink href="#faq">常见问题</PopLink>
+				</nav>
+			</div>
+			<div class="flex items-center gap-8">
+				<ConditionalRender controller={enableActionBtn}>
+					<a class="isolate relative group" href="#contact">
+						<div class="bg-pinia-300 text-black p-2 rounded-md group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
+							联系我们
+						</div>
+						<div class="bg-yellow-400 absolute inset-0 -z-10 rounded-md"></div>
+					</a>
+				</ConditionalRender>
+				<div class="relative">
+					<button class="block w-8 brightness-90 hover:brightness-110 focus:outline-none" aria-expanded="false" aria-controls="language-dropdown">
+						<img src="/resource/svg/github.svg" alt="Select Language">
+					</button>
+				
+					<!-- Dropdown menu -->
+					<div id="language-dropdown" class="absolute hidden bg-zinc-800 text-white rounded shadow-lg mt-2 py-2 right-0">
+						<a href="/" class="block px-4 py-2 hover:bg-zinc-700">English</a>
+						<a href="/zh" class="block px-4 py-2 hover:bg-zinc-700">中文</a>
+						<!-- <a href="/es" class="block px-4 py-2 hover:bg-zinc-700">Español</a> -->
+						<!-- Add more languages as needed -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</Wrapper>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const languageButton = document.getElementById('language-button');
+        const languageDropdown = document.getElementById('language-dropdown');
+
+        // Toggle dropdown on button click
+        languageButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from closing the dropdown immediately
+            const isExpanded = languageButton.getAttribute('aria-expanded') === 'true';
+            languageButton.setAttribute('aria-expanded', !isExpanded);
+            languageDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!languageDropdown.contains(event.target) && !languageButton.contains(event.target)) {
+                languageDropdown.classList.add('hidden');
+                languageButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+</script>

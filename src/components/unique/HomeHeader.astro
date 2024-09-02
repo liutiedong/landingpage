@@ -33,10 +33,45 @@ const {enableActionBtn = true} = Astro.props;
 						<div class="bg-yellow-400 absolute inset-0 -z-10 rounded-md"></div>
 					</a>
 				</ConditionalRender>
-				<!-- <a class="block w-8 brightness-90 hover:brightness-110" href="https://github.com/numonu/ilovejs" target="_blank"> -->
-					<!-- <img src="/resource/svg/github.svg" alt="continue to github"> -->
-				<!-- </button> -->
+				<!-- <a class="block w-8 brightness-90 hover:brightness-110" href="/zh">
+					<img src="/resource/svg/github.svg" alt="continue to github">
+				</a> -->
+			    <!-- Language button -->
+			<div class="relative">
+				<button class="block w-8 brightness-90 hover:brightness-110 focus:outline-none" aria-expanded="false" aria-controls="language-dropdown">
+					<img src="/resource/svg/github.svg" alt="Select Language">
+				</button>
+			
+				<!-- Dropdown menu -->
+				<div id="language-dropdown" class="absolute hidden bg-zinc-800 text-white rounded shadow-lg mt-2 py-2 right-0">
+					<a href="/" class="block px-4 py-2 hover:bg-zinc-700">English</a>
+					<a href="/zh" class="block px-4 py-2 hover:bg-zinc-700">中文</a>
+					<!-- <a href="/es" class="block px-4 py-2 hover:bg-zinc-700">Español</a> -->
+					<!-- Add more languages as needed -->
+				</div>
+			</div>
 			</div>
 		</div>
 	</Wrapper>
 </header>
+
+
+<script>
+    // JavaScript to toggle the dropdown visibility
+    const languageButton = document.querySelector('button[aria-controls="language-dropdown"]');
+    const languageDropdown = document.getElementById('language-dropdown');
+
+    languageButton.addEventListener('click', () => {
+        const isExpanded = languageButton.getAttribute('aria-expanded') === 'true';
+        languageButton.setAttribute('aria-expanded', !isExpanded);
+        languageDropdown.classList.toggle('hidden');
+    });
+
+    // Optional: Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+            languageDropdown.classList.add('hidden');
+            languageButton.setAttribute('aria-expanded', false);
+        }
+    });
+</script>

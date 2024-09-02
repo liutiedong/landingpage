@@ -1,0 +1,29 @@
+---
+import Spanify from "../../reusable/atoms/Spanify.astro";
+---
+<style>
+    .pattern {
+        --line-color: rgba(255, 230, 0, 0.15);
+        --size: 10px;
+        height: 100vh;
+        background-image: radial-gradient(transparent 30%, rgb(24, 24, 27) 70%), linear-gradient(90deg, transparent 90%, var(--line-color) 90%), linear-gradient(0deg, var(--line-color) 10%, transparent 10%);
+        background-size: auto auto, var(--size) var(--size), var(--size) var(--size);
+    }
+</style>
+
+<section class="pattern py-24 mb-section flex justify-center items-center text-center">
+    <div class="container invisible">
+        <div class="relative w-20 aspect-square mx-auto mb-16 md:w-28">
+            <img class="js absolute translate-y-2 translate-x-2 hue-rotate-[30deg]" src="articles/svg/code_screen.svg" alt="javascript">
+            <img class="crown absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[3rem] w-full max-w-[4rem]" src="articles/svg/web.svg" alt="crown">
+        </div>
+        <h1 class="mb-12 text-4xl font-normal font-roboto md:text-6xl">
+            <strong class="font-medium"><Spanify phrase="章鱼助手为您工作" className="title title-javascript"/></strong>
+        </h1>
+        <p class="description text-lg font-light">
+            让<strong class="javascript bg-purple-400 text-black inline-block px-1 rotate-[3deg]">生成式AI</strong> 处理你在<strong class="text-lime-400 font-semibold"><Spanify phrase="电脑和手机" className="guide bg-gradient-to-t from-lime-400 to-lime-400 bg-clip-text text-transparent"/></strong>上的任务，让你专注于真正重要的事情。
+        </p>
+    </div>
+</section>
+
+<script src="../../../lib/HeroAnimations.ts"></script>

@@ -1,0 +1,44 @@
+---
+import ArtAuthor from "@reusable/atoms/ArtAuthor.astro";
+import CodeShowcase from "./CodeShowcase.md";
+---
+
+<style>
+	li::before {
+		content: "";
+		display: inline-block;
+		width: 1.5rem;
+		aspect-ratio: 1/1;
+		background-image: url("resource/svg/check.svg");
+		background-size: cover;
+	}
+	.modules-section {
+    	scroll-margin-top: 80px; /* Offset scrolling */
+  	}
+</style>
+
+<section id="service" class="mb-section modules-section">
+	<div class="max-w-[700px] mx-auto grid gap-8 xl:max-w-none xl:grid-cols-2">
+		<div class="relative">
+			<figure class="relative isolate hidden w-full aspect-square max-w-[500px] mx-auto xl:block">
+				<div class="bg-pinia-400 absolute inset-0 rounded-full -z-10 opacity-50 scale-y-[.5] -rotate-45 blur-[200px]"></div>
+				<img src="resource/img/mac3.webp" alt="AI自动化在电脑上的演示"/>
+			</figure>
+		</div>
+		<div>
+			<h2 class="text-subtitle">
+				用<strong class="text-purple-300 font-medium">AI自动化</strong>最大化电脑上的生产力
+			</h2>
+			<p class="mb-8 text-lg">
+				通过我们的AI驱动自动化服务，改变你在电脑上的工作方式。我们的AI为你节省时间，让你专注于更重要的事情。
+			</p>
+			<p class="mb-8 text-lg">使用我们的电脑自动化服务，你可以：</p>
+			<ul class="mb-6 flex flex-col gap-6 [&>*]:flex [&>*]:items-center [&>*]:gap-2">
+				<li>轻松创建和编辑文档</li>
+				<li>自动处理和分析电子表格中的数据</li>
+				<li>与Microsoft Office和Google Workspace等常用工具集成</li>
+			</ul>
+			<span>以及许多其他任务...</span>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,38 @@
+---
+import Question from "@reusable/molecules/Question";
+---
+
+<section id="faq" class="mb-section modules-section">
+	<h2 class="decoration-purple-400 text-subtitle decoration-2 decoration-wavy text-center mt-12">常见问题</h2>
+	<div class="grid gap-4 md:grid-cols-2">
+		<div class="flex flex-col gap-4">
+			<Question client:visible question="我们的AI可以为你自动化哪些任务？">
+				我们的AI可以处理各种任务，包括撰写文档、执行Excel操作、起草电子邮件、安排日历事件、预订航班，甚至在你的手机上设置闹钟。
+			</Question>
+			<Question client:visible question="我该如何使用你们的AI服务？">
+				只需通过我们的平台发出指令——无论是通过文本、语音还是选择预设选项——我们的AI就会无缝地为你执行任务。
+			</Question>
+			<Question client:visible question="我的数据安全吗？">
+				是的，我们非常重视你的隐私和安全。所有由我们的AI处理的数据都是加密的，绝不会与第三方共享。
+			</Question>
+		</div>
+		<div class="flex flex-col gap-4">
+			<Question client:visible question="你的AI支持哪些平台？">
+				我们的AI集成了多种平台，包括Microsoft Office、Google Workspace、Slack等。我们会不断扩展兼容性，以支持更多的工具。
+			</Question>
+			<Question client:visible question="你们的服务收费是多少？">
+				我们提供灵活的定价计划，适合个人用户、专业人士和企业。你可以选择最适合你的计划。
+			</Question>
+			<Question client:visible question="我该如何开始使用？">
+				开始使用非常简单！只需在我们的网站上注册免费试用或申请演示，你就可以在几分钟内开始使用。
+			</Question>
+		</div>
+	</div>
+</section>
+
+
+<style>
+	.modules-section {
+	scroll-margin-top: 80px; /* Offset scrolling */
+  }
+</style>
