@@ -40,25 +40,65 @@ import ArtAuthor from "../reusable/atoms/ArtAuthor.astro";
 			</div>
 			<div class="border-purple-300 border-r-2 border-dashed"></div>
 			<div>
-                <form>
-                    <label class="block mb-6">
-                        <span class="block mb-2">Email</span>
-                        <input class="bg-transparent border-gray-700 w-full p-2 border-2 rounded-md text-sm" type="email" placeholder="Your Email..." required/>
-                    </label>
-                    <label class="block mb-6">
-                        <span class="block mb-2">Message</span>
-                        <textarea class="bg-transparent border-gray-700 w-full min-h-[100px] max-h-[200px] p-2 border-2 rounded-md text-sm" placeholder="Your Message..." required></textarea>
-                    </label>
+				<form action="https://formsubmit.co/info@altairx.tech" method="POST">
+					<label class="block mb-6">
+						<span class="block mb-2">Email</span>
+						<input class="bg-transparent border-gray-700 w-full p-2 border-2 rounded-md text-sm" type="email" name="email" placeholder="Your Email..." required/>
+					</label>
+					<label class="block mb-6">
+						<span class="block mb-2">Message</span>
+						<textarea class="bg-transparent border-gray-700 w-full min-h-[100px] max-h-[200px] p-2 border-2 rounded-md text-sm" name="message" placeholder="Your Message..." required></textarea>
+					</label>
 					<div class="flex justify-end">
-						<button class="isolate relative group">
+						<button type="submit" class="isolate relative group">
 							<div class="bg-purple-300 text-black p-2 rounded-md group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
 								Send Message
 							</div>
 							<div class="bg-green-400 absolute inset-0 -z-10 rounded-md"></div>
 						</button>
 					</div>
-                </form>
+				</form>
             </div>
 		</div>
 	</div>
 </section>
+
+
+<!-- This works for Cloudflare workers, only email not working. -->
+<!-- <script>
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent form from submitting the traditional way
+
+        // Get the values from the form fields
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Create a FormData object to send with the request
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('message', message);
+
+        try {
+            // Send a POST request to your Cloudflare Worker email-submit-python.tiedong-liu.workers.dev
+            const response = await fetch('https://email-submit-python.tiedong-liu.workers.dev', {
+                method: 'POST',
+                body: formData
+            });
+
+
+			if (response.ok) {
+				// alert('Message sent successfully!');
+				// console.log('Response from API:', response);  // Print the entire response to the console
+				const result = await response.json(); // Parse the response as JSON
+				console.log('Response from API:', result);  // Print the response to the console
+				alert(result.message);
+			} else {
+				alert('Failed to send message.');
+				console.log('Error Response from API:', response);  // Print error details to the console
+			}
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error sending your message.');
+        }
+    });
+</script> -->
