@@ -20,10 +20,176 @@ const {title , description} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description}>
 		<title>{title}</title>
+
+		<style>
+			/* Chatbot Bubble Button Styles */
+			#dify-chatbot-bubble-button {
+			  width: 70px !important;
+			  height: 70px !important;
+			  position: fixed !important;
+			  bottom: 6rem !important;
+			  right: 6rem !important;
+			  border-radius: 50% !important;
+			  background: rgba(255, 255, 255, 0.2) !important;
+			  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+			  backdrop-filter: blur(10px) !important;
+			  -webkit-backdrop-filter: blur(10px) !important;
+			  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+			  cursor: pointer !important;
+			  z-index: 2147483647 !important;
+			  display: flex !important;
+			  align-items: center !important;
+			  justify-content: center !important;
+			  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out !important;
+			}
+			
+			#dify-chatbot-bubble-button:hover {
+			  transform: scale(1.1) !important; /* Hover animation */
+			  background: rgba(255, 255, 255, 0.3) !important; /* Slightly brighter on hover */
+			}
+			
+			/* Replace the default SVG with a custom icon */
+			#dify-chatbot-bubble-button::before {
+			  content: "💬" !important;  /* You can use an emoji or replace it with a custom SVG */
+			  font-size: 2rem !important;
+			  color: #ffffff !important;
+			}
+			
+			/* Chatbot Iframe Window Styles */
+			#dify-chatbot-bubble-window {
+			  width: 30rem !important;
+			  height: 40rem !important;
+			  position: fixed !important;
+			  bottom: 85px !important;
+			  right: 2rem !important;
+			  border-radius: 20px !important;
+			  background: rgba(255, 255, 255, 0.15) !important;
+			  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+			  backdrop-filter: blur(15px) !important;
+			  -webkit-backdrop-filter: blur(15px) !important;
+			  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+			  overflow: hidden !important;
+			  z-index: 2147483647 !important;
+			  display: none !important; /* Initially hidden, shown on button click */
+			  animation: fadeIn 0.5s ease-in-out !important;
+			}
+			
+			/* Animation for opening the iframe */
+			@keyframes fadeIn {
+			  0% {
+				opacity: 0;
+				transform: translateY(20px);
+			  }
+			  100% {
+				opacity: 1;
+				transform: translateY(0);
+			  }
+			}
+			
+			/* Animation for closing the iframe */
+			@keyframes fadeOut {
+			  0% {
+				opacity: 1;
+				transform: translateY(0);
+			  }
+			  100% {
+				opacity: 0;
+				transform: translateY(20px);
+			  }
+			}
+			</style>
 	</head>
 	<body>
 		<div class="bg-zinc-900 text-neutral-50 min-h-screen font-poppins">
 			<slot/>
 		</div>
+
+  <!-- Add the chatbot script before the closing </body> tag . The Original Code -->
+  <script>
+    window.difyChatbotConfig = {
+      token: '39z54BuFHJfTyEJk'
+    }
+  </script>
+  <script
+    src="https://udify.app/embed.min.js"
+    id="39z54BuFHJfTyEJk"
+    defer>
+  </script>
+  <!-- <style>
+    #dify-chatbot-bubble-button {
+      background-color: #1C64F2 !important;
+    }
+  </style> -->
+
+
+<script>
+	window.addEventListener('load', () => {
+	  const customizeChatbot = () => {
+		// Apply custom styles to chatbot button
+		const bubbleButton = document.getElementById('dify-chatbot-bubble-button');
+		if (bubbleButton) {
+		  bubbleButton.style.width = '80px';
+		  bubbleButton.style.height = '80px';
+		  bubbleButton.style.position = 'fixed';
+		  bubbleButton.style.bottom = '4rem';
+		  bubbleButton.style.right = '4rem';
+		  bubbleButton.style.borderRadius = '10%';
+		  bubbleButton.style.background = 'rgba(255, 255, 255, 0.2)';
+		  bubbleButton.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
+		  bubbleButton.style.backdropFilter = 'blur(10px)';
+		  bubbleButton.style.webkitBackdropFilter = 'blur(10px)';
+		  bubbleButton.style.border = '1px solid rgba(255, 255, 255, 0.18)';
+		  bubbleButton.style.cursor = 'pointer';
+		  bubbleButton.style.zIndex = '2147483647';
+		  bubbleButton.style.display = 'flex';
+		  bubbleButton.style.alignItems = 'center';
+		  bubbleButton.style.justifyContent = 'center';
+		  bubbleButton.style.transition = 'transform 0.3s ease-in-out, background-color 0.3s ease-in-out';
+		  // hover
+		  bubbleButton.addEventListener('mouseover', () => {
+			// bubbleButton.style.transform = 'scale(1.2)';
+			bubbleButton.style.background = 'rgba(255, 255, 255, 0.3)';
+		  });
+		  bubbleButton.addEventListener('mouseout', () => {
+			// bubbleButton.style.transform = 'scale(1)';
+			bubbleButton.style.background = 'rgba(255, 255, 255, 0.2)';
+		  });
+  
+		  // Set hover effect using JavaScript
+		//   bubbleButton.addEventListener('mouseover', () => {
+		// 	bubbleButton.style.transform = 'scale(1.1)';
+		// 	bubbleButton.style.background = 'rgba(255, 255, 255, 0.3)';
+		//   });
+  
+		//   bubbleButton.addEventListener('mouseout', () => {
+		// 	bubbleButton.style.transform = 'scale(1)';
+		// 	bubbleButton.style.background = 'rgba(255, 255, 255, 0.2)';
+		//   });
+  
+		  // Set custom icon for button
+		  bubbleButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#c78ee6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7" stroke="#dbb6ed" stroke-width="1.5" stroke-linecap="round"></path> <path d="M8 12H8.009M11.991 12H12M15.991 12H16" stroke="#dbb6ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>';
+		}
+  
+		// Apply custom styles to chatbot iframe
+		const chatWindow = document.getElementById('dify-chatbot-bubble-window');
+		if (chatWindow) {
+		  chatWindow.style.width = '30rem';
+		  chatWindow.style.height = '40rem';
+		  chatWindow.style.borderRadius = '20px';
+		  chatWindow.style.background = 'rgba(255, 255, 255, 0.15)';
+		  chatWindow.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
+		  chatWindow.style.backdropFilter = 'blur(15px)';
+		  chatWindow.style.webkitBackdropFilter = 'blur(15px)';
+		  chatWindow.style.border = '1px solid rgba(255, 255, 255, 0.18)';
+		  chatWindow.style.overflow = 'hidden';
+		  chatWindow.style.zIndex = '2147483647';
+		  chatWindow.style.animation = 'fadeIn 0.5s ease-in-out';
+		}
+	  };
+  
+	  // Delay applying custom styles to make sure the chatbot elements are loaded
+	  setTimeout(customizeChatbot, 5);
+	});
+  </script>
 	</body>
 </html>
